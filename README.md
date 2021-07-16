@@ -55,7 +55,7 @@ The actor optimized to run blazing fast and scrape many as listings as possible.
 ```json
 {
   "startUrls":[
-    {"url":"https://clutch.co/profile/smartsites"}
+    "https://clutch.co/profile/smartsites"
   ],
   "search": "api",
   "mode": "companies",
