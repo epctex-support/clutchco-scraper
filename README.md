@@ -1,30 +1,31 @@
-# Actor - Clutch.co Scraper
+## Features
+Clutch.co doesn't provide a very flexible or free API, but this scraper acts as an unofficial Clutch API to help you extract the data you need, when you need it, and at scale.
 
-## Clutch.co scraper
+Clutch.co Scraper supports the following features:
 
-Since Clutch.co doesn't provide a good and free API, this actor should help you to retrieve data from it.
+-   **Search any keyword**
 
-The Clutch.co data scraper supports the following features:
+-   **Scrape lists**
 
--   **Search any keyword** - You can search any keyword you would like to have and get the results
+-   **Scrape reviews**
 
--   **Scrape lists** - Scrape any list that you'd like to get from Clutch.co
+-   **Scrape company profile**
 
--   **Scrape reviews** - If you want the reviews for the companies then it is very easy to make it done.
+Clutch provides a "platform of in-depth client reviews, data-driven content, and vetted market leaders". Scraping that content and extracting it in structured format could give you invaluable business insights and an edge over the competition.
 
--   **Scrape company profile** - Scrape a very detailed information for each of the companies that you'd like to get.
+## Tutorial
+Check out this blog post on [how to extract data from Clutch.co with unofficial Clutch API](https://blog.apify.com/how-to-extract-data-from-clutch-co-without-api/) for more information on the scraper.
 
 ## Bugs, fixes, updates and changelog
+This scraper is under active development. If you have any feature requests, you can create an issue from [here](https://github.com/tugkan/clutchco-scraper/issues).
 
-This scraper is under active development. If you have any feature requests you can create an issue from [here](https://github.com/tugkan/clutchco-scraper/issues).
+### Upcoming changes
 
-### Incoming Changes
-
--   Retrieve resource details
--   Search any keyword on resources
+-   Retrieve resource details.
+-   Search any keyword or resources.
 -   Enrich the reviews part, integration of full reviews.
 
-## Setup & Usage
+## Setup & usage
 
 You can see how this actor works in this video:
 
@@ -40,37 +41,37 @@ You can check the output of this video [here](https://api.apify.com/v2/datasets/
 
 You can check the output of this video [here](https://api.apify.com/v2/datasets/flUJ63yhGJPqJjMlq/items?clean=true&format=json).
 
-## Input Parameters
+## Input parameters
 
 The input of this scraper should be JSON containing the list of pages on Clutch.co that should be visited. Required fields are:
 
 | Field                | Type    | Description                                                                                                                                                                              |
 | -------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| search               | String  | (optional) Keyword that you want to search on Clutch.co. It is required when `mode` is defined.                                                                                          |
-| mode                 | String  | (optional) Mode that you want to use the search keyword on. The values can only be: `profiles` and `companies`. It is required when `search` field is defined.                           |
-| includeReviews       | Boolean | (optional) Adding reviews into the profile objects is optional and by default it is `false`. If you want to scrape the reviews of the companies then you can make this option as `true`. |
-| maxItems             | Integer | (optional) You can limit scraped profiles. This should be useful when you search through the big lists.                                                                                  |
-| startUrls            | Array   | (optional) List of Clutch.co URLs. You should only provide list or detail URLs                                                                                                           |
+| search               | String  | (optional) Keyword that you want to search on Clutch.co. This is required when `mode` is defined.                                                                                          |
+| mode                 | String  | (optional) Mode that you want to use the search keyword on. The values can only be: `profiles` and `companies`. This is required when `search` field is defined.                           |
+| includeReviews       | Boolean | (optional) Adding reviews into the profile objects is optional and by default it is `false`. If you want to scrape the reviews of the companies, then you can set this option as `true`. |
+| maxItems             | Integer | (optional) You can limit scraped profiles. This should be useful when you search big lists.                                                                                  |
+| startUrls            | Array   | (optional) List of Clutch.co URLs. You should only provide list or detail URLs.                                                                                                           |
 | endPage              | Integer | (optional) Final number of page that you want to scrape. Default is `Infinite`.                                                                                                          |
-| proxy                | Object  | Proxy configuration                                                                                                                                                                      |
-| extendOutputFunction | String  | (optional) Function that takes a JQuery handle ($) as argument and returns object with data                                                                                              |
-| customMapFunction    | String  | (optional) Function that takes company profile object as argument and returns object with the mapping function                                                                           |
+| proxy                | Object  | Proxy configuration.                                                                                                                                                                      |
+| extendOutputFunction | String  | (optional) Function that takes a JQuery handle ($) as argument and returns object with data.                                                                                              |
+| customMapFunction    | String  | (optional) Function that takes company profile object as argument and returns object with the mapping function.                                                                           |
 
-This solution requires the use of **Proxy servers**, either your own proxy servers or you can use [Apify Proxy](https://www.apify.com/docs/proxy).
+This solution **requires the use of proxy servers**, either your own proxy servers or [Apify Proxy](https://www.apify.com/docs/proxy).
 
-##### Tip
+### Tips
 
-When you want to have a scrape over a specific listing URL, just copy and paste the link as one of the **startUrl**.
+When you want to have a scrape over a specific listing URL, just copy and paste the link as one of the **startURL**.
 
-If you would like to scrape only the first page of a list then put the link for the page and have the `endPage` as 1.
+If you would like to scrape only the first page of a list, then add the link for the page and have the `endPage` as 1.
 
-Please also keep in mind that the `includeReviews` parameter will add multiple requests per company, on top of your actor. That's why the number of requests or the CUs that are consumed might be higher if you make this option as `true`.
+Please also keep in mind that the `includeReviews` parameter will add multiple requests per company. That's why the number of requests or CUs that are consumed might be higher if you set this option as `true`.
 
-### Compute Unit Consumption
+## Compute unit consumption
 
-The actor optimized to run blazing fast and scrape many as listings as possible. Therefore, it forefronts all listing detail requests. If actor doesn't block very often it'll scrape 100 listings in 2 minutes with ~0.07-0.08 compute units.
+Clutch.co Scraper is optimized to run extremely fast and scrape many as listings as possible, so it forefronts all listing detail requests. If the actor doesn't get blocked very often, it will scrape 100 listings in 2 minutes and consume ~0.07-0.08 compute units.
 
-### Clutch.co Scraper Input example
+### Clutch.co Scraper input example
 
 ```json
 {
@@ -88,20 +89,19 @@ The actor optimized to run blazing fast and scrape many as listings as possible.
 }
 ```
 
-## During the Run
-
+## During the run
 During the run, the actor will output messages letting you know what is going on. Each message always contains a short label specifying which page from the provided list is currently specified.
+
 When items are loaded from the page, you should see a message about this event with a loaded item count and total item count for each page.
 
-If you provide incorrect input to the actor, it will immediately stop with failure state and output an explanation of what is wrong.
+If you provide incorrect input to the actor, it will immediately stop with a failure state and output an explanation of what is wrong.
 
-## Clutch.co Export
-
+## Clutch.co export
 During the run, the actor stores results into a dataset. Each item is a separate item in the dataset.
 
-You can manage the results in any languague (Python, PHP, Node JS/NPM). See the FAQ or <a href="https://www.apify.com/docs/api" target="blank">our API reference</a> to learn more about getting results from this Clutch.co actor.
+You can manage the results in any languague (Python, PHP, Node.js/NPM). See the FAQ or <a href="https://www.apify.com/docs/api" target="blank">our API reference</a> to learn more about getting results from this Clutch.co actor.
 
-## Scraped Clutch.co Company Profiles
+## Scraped Clutch.co company profiles
 
 The structure of each item in Clutch.co listings looks like this:
 
