@@ -84,8 +84,8 @@ Clutch.co Scraper is optimized to run extremely fast and scrape many as listings
     "mode": "companies",
     "endPage": 1,
     "maxItems": 50,
-    "includeReviews": true,
-    "customMapFunction": "(profile) => { return {link: profile.url} }"
+    "includeReviews": false,
+    "customMapFunction": "(object) => { return object }"
 }
 ```
 
