@@ -17,7 +17,7 @@ Clutch provides a "platform of in-depth client reviews, data-driven content, and
 Check out this blog post on [how to extract data from Clutch.co with unofficial Clutch API](https://blog.apify.com/how-to-extract-data-from-clutch-co-without-api/) for more information on the scraper.
 
 ## Bugs, fixes, updates and changelog
-This scraper is under active development. If you have any feature requests, you can create an issue from [here](https://github.com/tugkan/clutchco-scraper/issues).
+This scraper is under active development. If you have any feature requests, you can create an issue from [here](https://github.com/epctex/clutchco-scraper/issues).
 
 ### Upcoming changes
 
@@ -203,6 +203,7 @@ The structure of each item in Clutch.co listings looks like this:
                 "verified": "Verified"
             }
         }
-    ]
+    ],
+    "websiteUrl": "https://www.smartsites.com/lp/digital-marketing-lp/?utm_source=clutch.co&utm_medium=referral"
 }
 ```
