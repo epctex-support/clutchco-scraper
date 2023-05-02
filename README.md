@@ -25,37 +25,27 @@ This scraper is under active development. If you have any feature requests, you 
 -   Search any keyword or resources.
 -   Enrich the reviews part, integration of full reviews.
 
-## Setup & usage
-
-You can see how this actor works in this video:
-
-### Search
-
-[![Apify - Clutch.co Scraper - Search](https://img.youtube.com/vi/jkdNRYdUCLI/0.jpg)](https://www.youtube.com/watch?v=jkdNRYdUCLI)
-
-You can check the output of this video [here](https://api.apify.com/v2/datasets/xJMmbumkwgUcM0t79/items?clean=true&format=json).
-
-### Start URLs
-
-[![Apify - Clutch.co Scraper - Start URLs](https://img.youtube.com/vi/Oz_GSovWjX0/0.jpg)](https://www.youtube.com/watch?v=Oz_GSovWjX0)
-
-You can check the output of this video [here](https://api.apify.com/v2/datasets/flUJ63yhGJPqJjMlq/items?clean=true&format=json).
-
 ## Input parameters
 
-The input of this scraper should be JSON containing the list of pages on Clutch.co that should be visited. Required fields are:
+The input of this scraper should be JSON containing the list of pages on Clutch.co that should be visited. Possible fields are:
 
-| Field                | Type    | Description                                                                                                                                                                              |
-| -------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| search               | String  | (optional) Keyword that you want to search on Clutch.co. This is required when `mode` is defined.                                                                                          |
-| mode                 | String  | (optional) Mode that you want to use the search keyword on. The values can only be: `profiles` and `companies`. This is required when `search` field is defined.                           |
-| includeReviews       | Boolean | (optional) Adding reviews into the profile objects is optional and by default it is `false`. If you want to scrape the reviews of the companies, then you can set this option as `true`. |
-| maxItems             | Integer | (optional) You can limit scraped profiles. This should be useful when you search big lists.                                                                                  |
-| startUrls            | Array   | (optional) List of Clutch.co URLs. You should only provide list or detail URLs.                                                                                                           |
-| endPage              | Integer | (optional) Final number of page that you want to scrape. Default is `Infinite`.                                                                                                          |
-| proxy                | Object  | Proxy configuration.                                                                                                                                                                      |
-| extendOutputFunction | String  | (optional) Function that takes a JQuery handle ($) as argument and returns object with data.                                                                                              |
-| customMapFunction    | String  | (optional) Function that takes company profile object as argument and returns object with the mapping function.                                                                           |
+- `search`: (Optional) (String) Keyword that you want to search on Clutch.co. This is required when `mode` is defined.
+
+- `mode`: (Optional) (String) Mode that you want to use the search keyword on. The values can only be: `profiles` and `companies`. This is required when `search` field is defined.
+
+- `startUrls`: (Optional) (Array) List of Clutch.co URLs. You should only provide list or detail URLs.
+
+- `includeReviews`: (Optional) (Boolean) Adding reviews into the profile objects is optional and by default it is `false`. If you want to scrape the reviews of the companies, then you can set this option as `true`.
+
+- `endPage`: (Optional) (Number) Final number of page that you want to scrape. Default is `Infinite`. This is applies to all `search` request and `startUrls` individually.
+
+- `maxItems`: (Optional) (Number) You can limit scraped items. This should be useful when you search through the big lists or search results.
+
+- `proxy`: (Required) (Proxy Object) Proxy configuration.
+
+- `extendOutputFunction`: (Optional) (String) Function that takes a JQuery handle ($) as argument and returns object with data.
+
+- `customMapFunction`: (Optional) (String) Function that takes each objects handle as argument and returns object with executing the function.
 
 This solution **requires the use of proxy servers**, either your own proxy servers or [Apify Proxy](https://www.apify.com/docs/proxy).
 
