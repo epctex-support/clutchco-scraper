@@ -1,3 +1,5 @@
+[https://apify.com/epctex/clutchco-scraper](https://apify.com/epctex/clutchco-scraper?fpr=yhdrb)
+
 ## Features
 Clutch.co doesn't provide a very flexible or free API, but this scraper acts as an unofficial Clutch API to help you extract the data you need, when you need it, and at scale.
 
@@ -11,12 +13,12 @@ Clutch.co Scraper supports the following features:
 
 -   **Scrape company profile**
 
-Clutch provides a "platform of in-depth client reviews, data-driven content, and vetted market leaders". Scraping that content and extracting it in structured format could give you invaluable business insights and an edge over the competition.
+Clutch provides a "platform of in-depth client reviews, data-driven content, and vetted market leaders". Scraping that content and extracting it in a structured format could give you invaluable business insights and an edge over the competition.
 
 ## Tutorial
 Check out this blog post on [how to extract data from Clutch.co with unofficial Clutch API](https://blog.apify.com/how-to-extract-data-from-clutch-co-without-api/) for more information on the scraper.
 
-## Bugs, fixes, updates and changelog
+## Bugs, fixes, updates, and changelog
 This scraper is under active development. If you have any feature requests, you can create an issue from [here](https://github.com/epctex/clutchco-scraper/issues).
 
 ### Upcoming changes
@@ -33,25 +35,25 @@ The input of this scraper should be JSON containing the list of pages on Clutch.
 
 - `mode`: (Optional) (String) Mode that you want to use the search keyword on. The values can only be: `profiles` and `companies`. This is required when `search` field is defined.
 
-- `startUrls`: (Optional) (Array) List of Clutch.co URLs. You should only provide list or detail URLs.
+- `startUrls`: (Optional) (Array) List of Clutch.co URLs. You should only provide a list or detailed URLs.
 
-- `includeReviews`: (Optional) (Boolean) Adding reviews into the profile objects is optional and by default it is `false`. If you want to scrape the reviews of the companies, then you can set this option as `true`.
+- `includeReviews`: (Optional) (Boolean) Adding reviews into the profile objects is optional and by default, it is `false`. If you want to scrape the reviews of the companies, then you can set this option as `true`.
 
-- `endPage`: (Optional) (Number) Final number of page that you want to scrape. Default is `Infinite`. This is applies to all `search` request and `startUrls` individually.
+- `endPage`: (Optional) (Number) Final number of page that you want to scrape. The default is `Infinite`. This applies to all `search` requests and `startUrls` individually.
 
 - `maxItems`: (Optional) (Number) You can limit scraped items. This should be useful when you search through the big lists or search results.
 
 - `proxy`: (Required) (Proxy Object) Proxy configuration.
 
-- `extendOutputFunction`: (Optional) (String) Function that takes a JQuery handle ($) as argument and returns object with data.
+- `extendOutputFunction`: (Optional) (String) Function that takes a JQuery handle ($) as an argument and returns an object with data.
 
-- `customMapFunction`: (Optional) (String) Function that takes each objects handle as argument and returns object with executing the function.
+- `customMapFunction`: (Optional) (String) Function that takes each object's handle as an argument and returns the object with executing the function.
 
 This solution **requires the use of proxy servers**, either your own proxy servers or [Apify Proxy](https://www.apify.com/docs/proxy).
 
 ### Tips
 
-When you want to have a scrape over a specific listing URL, just copy and paste the link as one of the **startURL**.
+When you want to scrape over a specific listing URL, just copy and paste the link as one of the **startURL**.
 
 If you would like to scrape only the first page of a list, then add the link for the page and have the `endPage` as 1.
 
@@ -59,7 +61,7 @@ Please also keep in mind that the `includeReviews` parameter will add multiple r
 
 ## Compute unit consumption
 
-Clutch.co Scraper is optimized to run extremely fast and scrape many as listings as possible, so it forefronts all listing detail requests. If the actor doesn't get blocked very often, it will scrape 100 listings in 2 minutes and consume ~0.07-0.08 compute units.
+Clutch.co Scraper is optimized to run extremely fast and scrape many listings as possible, so it forefronts all listing detail requests. If the actor doesn't get blocked very often, it will scrape 100 listings in 2 minutes and consume ~0.07-0.08 compute units.
 
 ### Clutch.co Scraper input example
 
@@ -89,7 +91,7 @@ If you provide incorrect input to the actor, it will immediately stop with a fai
 ## Clutch.co export
 During the run, the actor stores results into a dataset. Each item is a separate item in the dataset.
 
-You can manage the results in any languague (Python, PHP, Node.js/NPM). See the FAQ or <a href="https://www.apify.com/docs/api" target="blank">our API reference</a> to learn more about getting results from this Clutch.co actor.
+You can manage the results in any language (Python, PHP, Node.js/NPM). See the FAQ or <a href="https://www.apify.com/docs/api" target="blank">our API reference</a> to learn more about getting results from this Clutch.co actor.
 
 ## Scraped Clutch.co company profiles
 
@@ -173,7 +175,7 @@ The structure of each item in Clutch.co listings looks like this:
                 "category": "SEO & PPC",
                 "size": "$10,000 to $49,999$10,000 to $49,999",
                 "length": "Sep. 2020 - Jun. 2021Sep. 2020 - Jun. 2021",
-                "description": "SmartSites provided SEO and PPC services for an outdoor refinishing company including adding backlinks and creating new content. They planned monthly activities to raise the traffic and conversions."
+                "description": "SmartSites provided SEO and PPC services for an outdoor refinishing company including adding backlinks and creating new content. They planned monthly activities to raise the traffic and conversions."
             },
             "review": {
                 "rating": 5,
@@ -199,4 +201,4 @@ The structure of each item in Clutch.co listings looks like this:
 ```
 
 ## Contact
-Please visit us through [epctex.com](https://epctex.com) to see all the products that is available for you. If you are looking for any custom integration or so, please reach out to us through the chat box in [epctex.com](https://epctex.com). In need of support? [devops@epctex.com](mailto:devops@epctex.com) is at your service.
+Please visit us through [epctex.com](https://epctex.com) to see all the products that are available for you. If you are looking for any custom integration or so, please reach out to us through the chat box in [epctex.com](https://epctex.com). In need of support? [devops@epctex.com](mailto:devops@epctex.com) is at your service.
